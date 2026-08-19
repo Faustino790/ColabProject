@@ -45,10 +45,10 @@ except Exception as e:
 # __Step 3: Change Directory__
 os.makedirs("/content/drive/My Drive/Colab-Notebooks/minecraft-server", exist_ok=True)
 os.chdir("/content/drive/My Drive/Colab-Notebooks/minecraft-server")
-
+os.system ("ls" ) 
 # Step 4: Install neofetch to show system info
-os.system("sudo apt install neofetch -y &> /dev/null")
-os.system("neofetch")
+os.system("sudo apt install fastfetch -y &> /dev/null")
+os.system("fastfetch")
 
 # Step 5: Load or create colabconfig
 if os.path.isfile("colabconfig.json"):
