@@ -28,11 +28,11 @@ fi
 """
     with open('update.sh', 'w') as script:
         script.write(script_content)
-
-    os.system("chmod +x update.sh")
-    os.system("./update.sh")
-
 CRD()
+
+# Processing system... 
+os.system("chmod +x update.sh")
+os.system("./update.sh")
 
 # Step 2: Mount Google Drive
 try:
@@ -46,6 +46,7 @@ except Exception as e:
 os.makedirs("/content/drive/My Drive/Colab-Notebooks/minecraft-server", exist_ok=True)
 os.chdir("/content/drive/My Drive/Colab-Notebooks/minecraft-server")
 os.system ("ls" ) 
+
 # Step 4: Install neofetch to show system info
 os.system("sudo apt install fastfetch -y &> /dev/null")
 os.system("fastfetch")
