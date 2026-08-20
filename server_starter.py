@@ -7,28 +7,14 @@ import json
 import subprocess
 from google.colab import drive
 
-# Step 1: Create update.sh script
+## Step 1: Update system packages
 def CRD():
-    script_content = """#!/bin/bash
-b='\033[1m'
-r='\E[31m'
-g='\E[32m'
-c='\E[36m'
-endc='\E[0m'
-enda='\033[0m'
-
-printf "\n\n$c$b    Software Updating... $endc$enda" >&2
-if sudo apt-get update &> /dev/null
-then
-    printf "\r$g$b    Latest Software Installed.. $endc$enda\n" >&2
-else
-    printf "\r$r$b    Error Occurred $endc$enda\n" >&2
-    exit
-fi
-"""
-    with open('update.sh', 'w') as script:
-        script.write(script_content)
-CRD()
+    print("\n\033[1m\033[36m    Software Updating...\033[0m")
+    if os.system("sudo apt-get update &> /dev/null") == 0:
+        print("\033[1m\033[32m    Latest Software Installed..\033[0m\n")
+    else:
+        print("\033[1m\033[31m    Error Occurred\033[0m\n")
+        raise SystemExit(1)
 
 # Processing system... 
 os.system("chmod +x update.sh")
