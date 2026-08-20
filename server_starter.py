@@ -15,6 +15,7 @@ def CRD():
     else:
         print("\033[1m\033[31m    Error Occurred\033[0m\n")
         raise SystemExit(1)
+CRD() 
 
 # Processing system... 
 os.system("chmod +x update.sh")
