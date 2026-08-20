@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# SERVER STARTER
 
 import os
 import re
@@ -16,10 +15,6 @@ def CRD():
         print("\033[1m\033[31m    Error Occurred\033[0m\n")
         raise SystemExit(1)
 CRD() 
-
-# Processing system... 
-os.system("chmod +x update.sh")
-os.system("./update.sh")
 
 # Step 2: Mount Google Drive
 try:
